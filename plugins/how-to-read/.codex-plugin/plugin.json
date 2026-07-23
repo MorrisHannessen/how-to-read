@@ -1,0 +1,37 @@
+{
+  "name": "how-to-read",
+  "version": "1.0.0",
+  "description": "Accessibility-first response formatting for easier reading.",
+  "author": {
+    "name": "Morris Hannessen",
+    "url": "https://github.com/MorrisHannessen"
+  },
+  "homepage": "https://github.com/MorrisHannessen/how-to-read",
+  "repository": "https://github.com/MorrisHannessen/how-to-read",
+  "license": "MIT",
+  "keywords": [
+    "accessibility",
+    "adhd",
+    "dyslexia",
+    "communication",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "How to Read",
+    "shortDescription": "Make every response easier to read.",
+    "longDescription": "Answer first. Use short sentences, bold scan points, diagrams, and small code chunks.",
+    "developerName": "Morris Hannessen",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://github.com/MorrisHannessen/how-to-read",
+    "privacyPolicyURL": "https://github.com/MorrisHannessen/how-to-read/blob/main/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/MorrisHannessen/how-to-read/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Use How to Read for every response."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

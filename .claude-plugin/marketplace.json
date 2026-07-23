@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "how-to-read",
+  "description": "Accessibility-first response formatting for Claude Code.",
+  "owner": {
+    "name": "Morris Hannessen",
+    "url": "https://github.com/MorrisHannessen"
+  },
+  "plugins": [
+    {
+      "name": "how-to-read",
+      "description": "Answer first. Use short sentences, bold scan points, diagrams, and small code chunks.",
+      "source": "./plugins/how-to-read",
+      "category": "productivity"
+    }
+  ]
+}

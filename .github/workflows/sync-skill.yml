@@ -1,0 +1,47 @@
+name: Sync generated skill copies
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - skills/how-to-read/**
+      - scripts/sync.mjs
+      - scripts/package_skill.py
+
+concurrency:
+  group: sync-how-to-read
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync platform copies
+        run: |
+          node scripts/sync.mjs
+          python scripts/package_skill.py
+
+      - name: Commit generated changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add plugins/how-to-read/skills plugins/how-to-read/rules dist/how-to-read.skill
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: sync generated skill copies [skip ci]"
+          git push

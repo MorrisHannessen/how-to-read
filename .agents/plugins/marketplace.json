@@ -1,0 +1,20 @@
+{
+  "name": "how-to-read",
+  "interface": {
+    "displayName": "How to Read"
+  },
+  "plugins": [
+    {
+      "name": "how-to-read",
+      "source": {
+        "source": "local",
+        "path": "./plugins/how-to-read"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

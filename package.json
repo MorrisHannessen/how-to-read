@@ -1,0 +1,40 @@
+{
+  "name": "how-to-read-installer",
+  "version": "1.0.0",
+  "description": "Install How to Read for Claude Code, Codex, Cursor, and GitHub Copilot.",
+  "license": "MIT",
+  "author": "Morris Hannessen",
+  "homepage": "https://github.com/MorrisHannessen/how-to-read",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorrisHannessen/how-to-read.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MorrisHannessen/how-to-read/issues"
+  },
+  "bin": {
+    "how-to-read": "./bin/install.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "check:sync": "node scripts/sync.mjs --check",
+    "package:skill": "python scripts/package_skill.py",
+    "test": "node --test tests/*.test.mjs",
+    "validate": "npm run check:sync && npm test"
+  },
+  "files": [
+    "bin/",
+    "dist/how-to-read.skill",
+    "docs/",
+    "plugins/",
+    "skills/",
+    "install.ps1",
+    "install.sh",
+    "INSTALL.md",
+    "LICENSE",
+    "README.md"
+  ]
+}

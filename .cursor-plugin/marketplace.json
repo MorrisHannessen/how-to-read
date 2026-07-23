@@ -1,0 +1,16 @@
+{
+  "name": "how-to-read",
+  "owner": {
+    "name": "Morris Hannessen"
+  },
+  "metadata": {
+    "description": "Accessibility-first response formatting for Cursor."
+  },
+  "plugins": [
+    {
+      "name": "how-to-read",
+      "source": "plugins/how-to-read",
+      "description": "Answer first. Use short sentences, bold scan points, diagrams, and small code chunks."
+    }
+  ]
+}

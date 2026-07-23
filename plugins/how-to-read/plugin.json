@@ -1,0 +1,20 @@
+{
+  "name": "how-to-read",
+  "version": "1.0.0",
+  "description": "Make every GitHub Copilot response easier to read.",
+  "author": {
+    "name": "Morris Hannessen"
+  },
+  "homepage": "https://github.com/MorrisHannessen/how-to-read",
+  "repository": "https://github.com/MorrisHannessen/how-to-read",
+  "license": "MIT",
+  "keywords": [
+    "accessibility",
+    "adhd",
+    "dyslexia",
+    "communication"
+  ],
+  "skills": [
+    "skills/"
+  ]
+}

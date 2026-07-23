@@ -1,0 +1,18 @@
+{
+  "description": "Load How to Read at the start of every Claude Code or Codex session.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/inject-context.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading How to Read"
+          }
+        ]
+      }
+    ]
+  }
+}

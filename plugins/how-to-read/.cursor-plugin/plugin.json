@@ -1,0 +1,26 @@
+{
+  "name": "how-to-read",
+  "displayName": "How to Read",
+  "version": "1.0.0",
+  "description": "Make every response easier to read with short sentences and visual structure.",
+  "author": {
+    "name": "Morris Hannessen"
+  },
+  "homepage": "https://github.com/MorrisHannessen/how-to-read",
+  "repository": "https://github.com/MorrisHannessen/how-to-read",
+  "license": "MIT",
+  "keywords": [
+    "accessibility",
+    "adhd",
+    "dyslexia",
+    "communication"
+  ],
+  "category": "productivity",
+  "tags": [
+    "accessibility",
+    "writing",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "rules": "./rules/"
+}
