@@ -27,7 +27,8 @@ function parseArgs(argv) {
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
-    if (arg === "--dry-run") options.dryRun = true;
+    if (arg === "--") continue;
+    else if (arg === "--dry-run") options.dryRun = true;
     else if (arg === "--uninstall" || arg === "-u") options.uninstall = true;
     else if (arg === "--repo") options.repo = requireValue(argv, ++index, arg);
     else if (arg === "--home") options.home = requireValue(argv, ++index, arg);

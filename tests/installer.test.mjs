@@ -111,6 +111,15 @@ test("dry run writes nothing", (t) => {
   assert.deepEqual(fs.readdirSync(home), []);
 });
 
+test("npm argument separator is accepted", (t) => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), "how-to-read-separator-"));
+  t.after(() => fs.rmSync(home, { recursive: true, force: true }));
+
+  const result = run(["--", "--home", home, "--dry-run"]);
+  assert.match(result.stdout, /\[dry-run\]/);
+  assert.deepEqual(fs.readdirSync(home), []);
+});
+
 test("unknown targets fail clearly", () => {
   const result = run(["--only", "unknown"], 1);
   assert.match(result.stderr, /Unknown target: unknown/);

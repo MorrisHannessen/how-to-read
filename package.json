@@ -22,7 +22,7 @@
     "sync": "node scripts/sync.mjs",
     "check:sync": "node scripts/sync.mjs --check",
     "package:skill": "python scripts/package_skill.py",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/installer.test.mjs tests/manifest.test.mjs",
     "validate": "npm run check:sync && npm test"
   },
   "files": [

@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
@@ -12,6 +14,22 @@ function read(relative) {
 
 function json(relative) {
   return JSON.parse(read(relative));
+}
+
+function packageSkill() {
+  const result = spawnSync("python", [path.join(root, "scripts/package_skill.py")], {
+    cwd: root,
+    encoding: "utf8",
+  });
+  assert.equal(
+    result.status,
+    0,
+    `stdout:\n${result.stdout}\nstderr:\n${result.stderr}`,
+  );
+}
+
+function sha256(file) {
+  return createHash("sha256").update(fs.readFileSync(file)).digest("hex");
 }
 
 test("canonical skill has valid minimal frontmatter", () => {
@@ -84,4 +102,20 @@ test("generated skill copy matches the canonical source", () => {
     read("plugins/how-to-read/skills/how-to-read/agents/openai.yaml"),
     read("skills/how-to-read/agents/openai.yaml"),
   );
+});
+
+test("skill archive is reproducible across source timestamps", () => {
+  const source = path.join(root, "skills/how-to-read/SKILL.md");
+  const archive = path.join(root, "dist/how-to-read.skill");
+  const original = fs.statSync(source);
+
+  try {
+    packageSkill();
+    const first = sha256(archive);
+    fs.utimesSync(source, original.atime, new Date(original.mtimeMs + 60_000));
+    packageSkill();
+    assert.equal(sha256(archive), first);
+  } finally {
+    fs.utimesSync(source, original.atime, original.mtime);
+  }
 });
