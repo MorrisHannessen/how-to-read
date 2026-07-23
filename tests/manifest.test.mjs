@@ -37,7 +37,8 @@ test("canonical skill has valid minimal frontmatter", () => {
   assert.match(skill, /^---\nname: how-to-read\ndescription: >\n/);
   assert.match(skill, /\n---\n\n# How to Read\n/);
   assert.doesNotMatch(skill, /TODO|\[TODO:/i);
-  assert.match(skill, /Use the depth the user requests\./);
+  assert.match(skill, /Give the \*\*smallest complete answer\*\* by default\./);
+  assert.match(skill, /Match the reader and requested depth/);
 });
 
 test("OpenAI metadata supports implicit invocation", () => {
@@ -48,6 +49,7 @@ test("OpenAI metadata supports implicit invocation", () => {
 });
 
 test("all plugin manifests parse and identify the same plugin", () => {
+  const expectedVersion = json("package.json").version;
   const manifests = [
     "plugins/how-to-read/.claude-plugin/plugin.json",
     "plugins/how-to-read/.codex-plugin/plugin.json",
@@ -57,9 +59,18 @@ test("all plugin manifests parse and identify the same plugin", () => {
 
   for (const manifest of manifests) {
     assert.equal(manifest.name, "how-to-read");
-    assert.equal(manifest.version, "1.0.0");
+    assert.equal(manifest.version, expectedVersion);
     assert.equal(manifest.license, "MIT");
   }
+});
+
+test("all version-bearing metadata matches the package version", () => {
+  const expectedVersion = json("package.json").version;
+  const githubMarketplace = json(".github/plugin/marketplace.json");
+
+  assert.equal(expectedVersion, "1.1.0");
+  assert.equal(githubMarketplace.metadata.version, expectedVersion);
+  assert.equal(githubMarketplace.plugins[0].version, expectedVersion);
 });
 
 test("marketplaces point to the packaged plugin", () => {

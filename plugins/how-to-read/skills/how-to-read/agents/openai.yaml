@@ -1,7 +1,7 @@
 interface:
   display_name: "How to Read"
-  short_description: "Make every response easier to read"
-  default_prompt: "Use $how-to-read to answer first and make every response easy to scan."
+  short_description: "Make responses adaptive and easier to understand"
+  default_prompt: "Use $how-to-read to answer first, adapt the detail, and make relationships clear."
 
 policy:
   allow_implicit_invocation: true

@@ -1,7 +1,7 @@
 {
   "name": "how-to-read",
-  "version": "1.0.0",
-  "description": "Accessibility-first response formatting for easier reading.",
+  "version": "1.1.0",
+  "description": "Adaptive, answer-first response formatting for easier understanding.",
   "author": {
     "name": "Morris Hannessen",
     "url": "https://github.com/MorrisHannessen"
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "How to Read",
-    "shortDescription": "Make every response easier to read.",
-    "longDescription": "Answer first. Use short sentences, bold scan points, diagrams, and small code chunks.",
+    "shortDescription": "Make responses adaptive and easier to understand.",
+    "longDescription": "Answer first, adapt detail to the reader, clarify relationships, and use accessible visuals.",
     "developerName": "Morris Hannessen",
     "category": "Productivity",
     "capabilities": [
@@ -30,7 +30,7 @@
     "privacyPolicyURL": "https://github.com/MorrisHannessen/how-to-read/blob/main/SECURITY.md",
     "termsOfServiceURL": "https://github.com/MorrisHannessen/how-to-read/blob/main/LICENSE",
     "defaultPrompt": [
-      "Use How to Read for every response."
+      "Use How to Read for every response and adapt the explanation to the reader."
     ],
     "brandColor": "#2563EB"
   }

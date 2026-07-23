@@ -1,7 +1,7 @@
 {
   "name": "how-to-read",
-  "version": "1.0.0",
-  "description": "Make every GitHub Copilot response easier to read.",
+  "version": "1.1.0",
+  "description": "Make GitHub Copilot responses adaptive and easier to understand.",
   "author": {
     "name": "Morris Hannessen"
   },

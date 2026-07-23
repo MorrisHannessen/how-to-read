@@ -1,7 +1,7 @@
 {
   "name": "how-to-read",
-  "version": "1.0.0",
-  "description": "Make every response easier to read with short sentences and visual structure.",
+  "version": "1.1.0",
+  "description": "Make responses adaptive and easier to understand with answer-first structure.",
   "author": {
     "name": "Morris Hannessen",
     "url": "https://github.com/MorrisHannessen"
